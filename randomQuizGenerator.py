@@ -29,11 +29,12 @@ capitals = {'Alabama': 'Montgomery', 'Alaska': 'Juneau', 'Arizona': 'Phoenix',
             #       2. instead of creating quiz and answer files in the current working directory, create a folder titled 'quizzes' and another folder titled 'answers'.
             #       3. place the randomly-generated quizzes in the 'quizzes' directory.
             #       4. plaec the corresponding answers in the 'answers' directory
+
+            
+            
+
 answerspath = r'./answers'
 quizpath = r'./quizzes'
-
-
-
 quizzQty = 5
 
 #The quiz data; keys are questions and values are answers
@@ -43,13 +44,12 @@ if not  os.path.exists(answerspath):
 quizpath = r'./quizzes'
 if not os.path.exists(quizpath):
     os.makedirs(quizpath)
-
  # Create answer file
-answerKeyFile = open('./answers/quiz_answers.txt', 'w') 
+#answerKeyFile = open('./answers/quiz_answers.txt', 'w')
 for quizNum in range(5):
     # Create the quiz and answer key files.
-    with open('capitalsquiz%s.txt' % (quizNum + 1), 'w') as quizFile, \
-            open('capitalsquiz_answers%s.txt' % (quizNum + 1), 'w') as answerKeyFile:
+    with    open('./quizzes/capitalsquiz%s.txt' % (quizNum + 1), 'w') as quizFile, \
+            open('./answers/capital_answer%s.txt' % (quizNum + 1), 'w') as answerKeyFile:
        
             # Write out the header for the quiz.
         quizFile.write('Name:\n\nDate:\n\nPeriod:\n\n')
@@ -86,3 +86,4 @@ for quizNum in range(5):
     'ABCD'[answerOptions.index(correctAnswer)]))
             
             
+
